@@ -1,0 +1,295 @@
+
+/* =========================================
+   LOGIN PAGE
+========================================= */
+
+.role-login-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #e8edff 0,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            #e9f4ff 0,
+            transparent 30%
+        ),
+        #f6f8fc;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+}
+
+
+/* =========================================
+   BACK TO HOME
+========================================= */
+
+.login-back {
+    position: absolute;
+
+    top: 30px;
+    left: 40px;
+
+    text-decoration: none;
+
+    color: #596276;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.login-back:hover {
+    color: #4354b8;
+}
+
+
+/* =========================================
+   LOGIN CARD
+========================================= */
+
+.role-login-card {
+    width: 100%;
+    max-width: 450px;
+
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 22px;
+
+    border: 1px solid #e8ebf2;
+
+    box-shadow:
+        0 25px 70px rgba(35, 43, 72, 0.12);
+
+    text-align: center;
+}
+
+
+/* =========================================
+   ROLE ICON
+========================================= */
+
+.login-role-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 22px;
+
+    border-radius: 20px;
+
+    background: #eef0ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.role-login-card h1 {
+    margin: 0;
+
+    font-size: 30px;
+
+    color: #172033;
+}
+
+.login-description {
+    margin: 12px 0 30px;
+
+    color: #7b8395;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.role-login-card form {
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #394258;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 15px;
+
+    border: 1px solid #dfe3eb;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    color: #172033;
+
+    background: #fbfcfe;
+
+    transition: 0.2s ease;
+}
+
+.input-group input:focus {
+    border-color: #4354b8;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px rgba(67, 84, 184, 0.08);
+}
+
+
+/* =========================================
+   LOGIN BUTTON
+========================================= */
+
+.role-login-card button {
+    width: 100%;
+
+    border: none;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    background: #4354b8;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.role-login-card button:hover {
+    background: #34449f;
+
+    transform: translateY(-1px);
+}
+
+.role-login-card button:disabled {
+    opacity: 0.7;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================
+   SECURITY
+========================================= */
+
+.login-security {
+    margin-top: 22px;
+
+    padding: 11px;
+
+    border-radius: 9px;
+
+    background: #f5f7fb;
+
+    color: #737b8d;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   OTHER LOGINS
+========================================= */
+
+.other-login {
+    margin-top: 25px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid #edf0f5;
+
+    font-size: 13px;
+
+    color: #858da0;
+}
+
+.other-login-links {
+    margin-top: 10px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+}
+
+.other-login-links a {
+    color: #4354b8;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.other-login-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .role-login-card {
+        padding: 30px 22px;
+    }
+
+    .login-back {
+        top: 20px;
+        left: 20px;
+    }
+
+}
+

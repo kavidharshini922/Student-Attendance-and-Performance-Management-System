@@ -1,0 +1,347 @@
+
+/* ======================================================
+   STUDENT DASHBOARD
+   ====================================================== */
+
+.student-dashboard-page {
+    min-height: 100vh;
+    background: #f5f7fb;
+    padding: 35px 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+}
+
+
+/* ======================================================
+   HEADER
+   ====================================================== */
+
+.student-dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.student-dashboard-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #6b7280;
+}
+
+.student-dashboard-header h1 {
+    margin: 8px 0 6px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.student-dashboard-header p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 15px;
+}
+
+
+/* ======================================================
+   LOGOUT BUTTON
+   ====================================================== */
+
+.student-logout-button {
+    border: none;
+    background: #111827;
+    color: white;
+    padding: 11px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.student-logout-button:hover {
+    background: #374151;
+    transform: translateY(-1px);
+}
+
+
+/* ======================================================
+   WELCOME CARD
+   ====================================================== */
+
+.student-welcome-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 30px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.welcome-small-text {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: #6b7280;
+}
+
+.student-welcome-card h2 {
+    margin: 8px 0;
+    font-size: 26px;
+    color: #111827;
+}
+
+.student-welcome-card p {
+    margin: 0;
+    max-width: 650px;
+    line-height: 1.6;
+    color: #6b7280;
+    font-size: 15px;
+}
+
+.student-welcome-icon {
+    width: 75px;
+    height: 75px;
+    border-radius: 18px;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+}
+
+
+/* ======================================================
+   SECTION
+   ====================================================== */
+
+.student-dashboard-section {
+    margin-bottom: 35px;
+}
+
+.student-section-heading {
+    margin-bottom: 20px;
+}
+
+.student-section-heading h2 {
+    margin: 0 0 6px;
+    font-size: 21px;
+    color: #111827;
+}
+
+.student-section-heading p {
+    margin: 0;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+
+/* ======================================================
+   DASHBOARD CARDS
+   ====================================================== */
+
+.student-dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.student-dashboard-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.student-dashboard-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+    padding: 25px;
+    min-height: 220px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.035);
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.student-dashboard-card:hover {
+    transform: translateY(-5px);
+    border-color: #d1d5db;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ======================================================
+   CARD TOP
+   ====================================================== */
+
+.student-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.student-card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.attendance-icon {
+    background: #f3f4f6;
+}
+
+.performance-icon {
+    background: #f3f4f6;
+}
+
+.profile-icon {
+    background: #f3f4f6;
+}
+
+.student-card-arrow {
+    font-size: 22px;
+    color: #9ca3af;
+    transition: 0.2s ease;
+}
+
+.student-dashboard-card:hover .student-card-arrow {
+    color: #111827;
+    transform: translateX(4px);
+}
+
+
+/* ======================================================
+   CARD CONTENT
+   ====================================================== */
+
+.student-dashboard-card h3 {
+    margin: 0 0 10px;
+    font-size: 19px;
+    color: #111827;
+}
+
+.student-dashboard-card p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 14px;
+    color: #6b7280;
+    min-height: 45px;
+}
+
+.student-card-action {
+    margin-top: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #374151;
+}
+
+
+/* ======================================================
+   INFORMATION SECTION
+   ====================================================== */
+
+.student-info-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.student-info-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+}
+
+.student-info-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 11px;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    flex-shrink: 0;
+}
+
+.student-info-card h3 {
+    margin: 0 0 6px;
+    font-size: 16px;
+    color: #111827;
+}
+
+.student-info-card p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #6b7280;
+}
+
+
+/* ======================================================
+   RESPONSIVE DESIGN
+   ====================================================== */
+
+@media (max-width: 900px) {
+
+    .student-dashboard-page {
+        padding: 25px;
+    }
+
+    .student-dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .student-info-section {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .student-dashboard-page {
+        padding: 20px 15px;
+    }
+
+    .student-dashboard-header {
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .student-dashboard-header h1 {
+        font-size: 25px;
+    }
+
+    .student-logout-button {
+        padding: 9px 15px;
+    }
+
+    .student-welcome-card {
+        padding: 22px;
+    }
+
+    .student-welcome-icon {
+        display: none;
+    }
+
+    .student-dashboard-card {
+        min-height: auto;
+    }
+
+}
+

@@ -1,0 +1,624 @@
+
+/* ======================================================
+   TEACHER MANAGEMENT PAGE
+   ====================================================== */
+
+.teacher-page {
+    min-height: 100vh;
+    background: #f5f7fa;
+    padding: 30px 45px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+}
+
+
+/* ======================================================
+   HEADER
+   ====================================================== */
+
+.teacher-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
+.teacher-header h1 {
+    margin: 15px 0 5px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.teacher-header p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 15px;
+}
+
+.back-button {
+    border: none;
+    background: transparent;
+    color: #374151;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+}
+
+.back-button:hover {
+    color: #111827;
+}
+
+.add-teacher-button {
+    border: none;
+    background: #111827;
+    color: white;
+    padding: 13px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.add-teacher-button:hover {
+    background: #000000;
+}
+
+
+/* ======================================================
+   MESSAGES
+   ====================================================== */
+
+.teacher-success,
+.teacher-error {
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.teacher-success {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #047857;
+}
+
+.teacher-error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+}
+
+
+/* ======================================================
+   STATISTICS
+   ====================================================== */
+
+.teacher-statistics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.teacher-stat-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.teacher-stat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.teacher-stat-card span {
+    display: block;
+    color: #6b7280;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.teacher-stat-card strong {
+    display: block;
+    color: #111827;
+    font-size: 26px;
+}
+
+
+/* ======================================================
+   TOOLBAR
+   ====================================================== */
+
+.teacher-toolbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.teacher-search {
+    flex: 1;
+    max-width: 600px;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.teacher-search span {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.teacher-search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 13px 0;
+    font-size: 14px;
+    color: #111827;
+}
+
+.refresh-teacher-button {
+    background: white;
+    border: 1px solid #d1d5db;
+    color: #374151;
+    border-radius: 8px;
+    padding: 0 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.refresh-teacher-button:hover {
+    background: #f9fafb;
+}
+
+.refresh-teacher-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* ======================================================
+   TABLE CONTAINER
+   ====================================================== */
+
+.teacher-table-container {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.teacher-table-header {
+    padding: 22px 25px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.teacher-table-header h2 {
+    margin: 0 0 5px;
+    font-size: 19px;
+    color: #111827;
+}
+
+.teacher-table-header p {
+    margin: 0;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+
+/* ======================================================
+   TABLE
+   ====================================================== */
+
+.teacher-table-wrapper {
+    overflow-x: auto;
+}
+
+.teacher-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.teacher-table th {
+    text-align: left;
+    padding: 15px 20px;
+    background: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+    color: #6b7280;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.teacher-table td {
+    padding: 17px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    color: #374151;
+}
+
+.teacher-table tbody tr:hover {
+    background: #fafafa;
+}
+
+.teacher-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ======================================================
+   TEACHER NAME
+   ====================================================== */
+
+.teacher-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.teacher-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #111827;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.teacher-name strong {
+    color: #111827;
+}
+
+
+/* ======================================================
+   TEACHER ID
+   ====================================================== */
+
+.teacher-id {
+    font-weight: 600;
+    color: #6b7280;
+}
+
+
+/* ======================================================
+   SUBJECT
+   ====================================================== */
+
+.subject-badge {
+    display: inline-block;
+    padding: 6px 10px;
+    background: #f3f4f6;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #374151;
+}
+
+
+/* ======================================================
+   ACTIONS
+   ====================================================== */
+
+.teacher-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-teacher-button,
+.delete-teacher-button {
+    border-radius: 6px;
+    padding: 8px 11px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.edit-teacher-button {
+    background: white;
+    border: 1px solid #d1d5db;
+    color: #374151;
+}
+
+.edit-teacher-button:hover {
+    background: #f3f4f6;
+}
+
+.delete-teacher-button {
+    background: white;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+}
+
+.delete-teacher-button:hover {
+    background: #fef2f2;
+}
+
+
+/* ======================================================
+   EMPTY STATE
+   ====================================================== */
+
+.teacher-empty {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.teacher-empty > div {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.teacher-empty h3 {
+    margin: 0 0 8px;
+    color: #111827;
+}
+
+.teacher-empty p {
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+.teacher-empty button {
+    background: #111827;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 11px 18px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+/* ======================================================
+   MODAL
+   ====================================================== */
+
+.teacher-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.teacher-modal {
+    width: 100%;
+    max-width: 520px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.teacher-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 25px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.teacher-modal-header span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #6b7280;
+}
+
+.teacher-modal-header h2 {
+    margin: 5px 0 0;
+    font-size: 22px;
+    color: #111827;
+}
+
+.close-modal-button {
+    border: none;
+    background: #f3f4f6;
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #374151;
+}
+
+.close-modal-button:hover {
+    background: #e5e7eb;
+}
+
+
+/* ======================================================
+   FORM
+   ====================================================== */
+
+.teacher-form {
+    padding: 25px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-group input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    padding: 12px 13px;
+    outline: none;
+    font-size: 14px;
+    color: #111827;
+}
+
+.form-group input:focus {
+    border-color: #111827;
+}
+
+
+/* ======================================================
+   FORM BUTTONS
+   ====================================================== */
+
+.teacher-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.cancel-button,
+.save-teacher-button {
+    padding: 11px 18px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.cancel-button {
+    background: white;
+    border: 1px solid #d1d5db;
+    color: #374151;
+}
+
+.cancel-button:hover {
+    background: #f3f4f6;
+}
+
+.save-teacher-button {
+    background: #111827;
+    color: white;
+    border: none;
+}
+
+.save-teacher-button:hover {
+    background: #000000;
+}
+
+
+/* ======================================================
+   LOADING
+   ====================================================== */
+
+.teacher-loading {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f5f7fa;
+    color: #111827;
+}
+
+.teacher-loading h2 {
+    margin: 15px 0 5px;
+}
+
+.teacher-loading p {
+    color: #6b7280;
+}
+
+.teacher-spinner {
+    width: 42px;
+    height: 42px;
+    border: 4px solid #e5e7eb;
+    border-top-color: #111827;
+    border-radius: 50%;
+    animation: teacher-spin 0.8s linear infinite;
+}
+
+@keyframes teacher-spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+
+@media (max-width: 900px) {
+
+    .teacher-page {
+        padding: 25px;
+    }
+
+    .teacher-statistics {
+        grid-template-columns: 1fr;
+    }
+
+    .teacher-header {
+        align-items: flex-start;
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .teacher-toolbar {
+        flex-direction: column;
+    }
+
+    .teacher-search {
+        max-width: none;
+    }
+
+    .refresh-teacher-button {
+        padding: 12px 20px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .teacher-page {
+        padding: 18px;
+    }
+
+    .teacher-header h1 {
+        font-size: 26px;
+    }
+
+    .teacher-modal {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .teacher-actions {
+        flex-direction: column;
+    }
+
+}

@@ -1,0 +1,375 @@
+
+/* ======================================================
+   ATTENDANCE STATUS PAGE
+   ====================================================== */
+
+.attendance-status-page {
+    min-height: 100vh;
+    padding: 35px 50px;
+    background: #f5f7fb;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+}
+
+
+/* ======================================================
+   HEADER
+   ====================================================== */
+
+.attendance-status-header {
+    margin-bottom: 30px;
+}
+
+.attendance-status-header h1 {
+    margin: 18px 0 8px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.attendance-status-header p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 15px;
+}
+
+
+/* ======================================================
+   BACK BUTTON
+   ====================================================== */
+
+.attendance-back-button {
+    border: none;
+    background: transparent;
+    color: #2563eb;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.attendance-back-button:hover {
+    text-decoration: underline;
+}
+
+
+/* ======================================================
+   SEARCH CARD
+   ====================================================== */
+
+.attendance-search-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+
+/* ======================================================
+   SEARCH CARD TITLE
+   ====================================================== */
+
+.attendance-card-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.attendance-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #eff6ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.attendance-card-title h2 {
+    margin: 0 0 5px;
+    font-size: 20px;
+    color: #111827;
+}
+
+.attendance-card-title p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* ======================================================
+   SEARCH FORM
+   ====================================================== */
+
+.attendance-search-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.attendance-input-group {
+    flex: 1;
+}
+
+.attendance-input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.attendance-input-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    color: #111827;
+    transition: 0.2s ease;
+}
+
+.attendance-input-group input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* ======================================================
+   SEARCH BUTTON
+   ====================================================== */
+
+.attendance-search-button {
+    border: none;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    min-width: 120px;
+    transition: 0.2s ease;
+}
+
+.attendance-search-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.attendance-search-button:disabled {
+    background: #93c5fd;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* ======================================================
+   MESSAGE
+   ====================================================== */
+
+.attendance-message {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    color: #c2410c;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+
+/* ======================================================
+   RESULTS CARD
+   ====================================================== */
+
+.attendance-results-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+
+/* ======================================================
+   RESULTS HEADER
+   ====================================================== */
+
+.attendance-results-header {
+    padding: 24px 28px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.attendance-results-header h2 {
+    margin: 0 0 6px;
+    font-size: 20px;
+    color: #111827;
+}
+
+.attendance-results-header p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* ======================================================
+   RECORD COUNT
+   ====================================================== */
+
+.attendance-record-count {
+    text-align: center;
+    min-width: 80px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: #f3f4f6;
+}
+
+.attendance-record-count span {
+    display: block;
+    color: #6b7280;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.attendance-record-count strong {
+    font-size: 20px;
+    color: #111827;
+}
+
+
+/* ======================================================
+   TABLE
+   ====================================================== */
+
+.attendance-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.attendance-status-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attendance-status-table th {
+    background: #f9fafb;
+    color: #6b7280;
+    text-align: left;
+    padding: 16px 24px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.attendance-status-table td {
+    padding: 18px 24px;
+    font-size: 14px;
+    color: #374151;
+    border-bottom: 1px solid #f0f1f3;
+}
+
+.attendance-status-table tbody tr {
+    transition: 0.2s ease;
+}
+
+.attendance-status-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.attendance-status-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ======================================================
+   ID BADGES
+   ====================================================== */
+
+.attendance-id,
+.attendance-student-id {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 6px;
+    background: #f3f4f6;
+    color: #4b5563;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ======================================================
+   STATUS BADGES
+   ====================================================== */
+
+.status-present,
+.status-absent {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.status-present {
+    background: #ecfdf5;
+    color: #047857;
+}
+
+.status-absent {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+
+@media (max-width: 700px) {
+
+    .attendance-status-page {
+        padding: 25px 20px;
+    }
+
+    .attendance-status-header h1 {
+        font-size: 27px;
+    }
+
+    .attendance-search-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .attendance-search-button {
+        width: 100%;
+    }
+
+    .attendance-results-header {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .attendance-status-table th,
+    .attendance-status-table td {
+        padding: 14px 16px;
+        white-space: nowrap;
+    }
+
+}
+

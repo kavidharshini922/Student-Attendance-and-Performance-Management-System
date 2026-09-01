@@ -1,0 +1,387 @@
+/* ======================================================
+   STUDENT ATTENDANCE PAGE
+   ====================================================== */
+
+.student-attendance-page {
+    min-height: 100vh;
+    padding: 35px 50px;
+    background: #f5f7fb;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+}
+
+
+/* ======================================================
+   HEADER
+   ====================================================== */
+
+.student-attendance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.student-attendance-header h1 {
+    margin: 18px 0 8px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.student-attendance-header p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 15px;
+}
+
+
+/* ======================================================
+   BACK BUTTON
+   ====================================================== */
+
+.student-attendance-back-button {
+    border: none;
+    background: transparent;
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+}
+
+.student-attendance-back-button:hover {
+    text-decoration: underline;
+}
+
+
+/* ======================================================
+   ERROR MESSAGE
+   ====================================================== */
+
+.student-attendance-error {
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+    color: #be123c;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+
+/* ======================================================
+   SUMMARY CARDS
+   ====================================================== */
+
+.student-attendance-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.attendance-summary-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.attendance-summary-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #eff6ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+}
+
+.attendance-summary-card span {
+    display: block;
+    color: #6b7280;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.attendance-summary-card strong {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+}
+
+
+/* ======================================================
+   TABLE CONTAINER
+   ====================================================== */
+
+.student-attendance-table-container {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+}
+
+
+/* ======================================================
+   TABLE HEADER
+   ====================================================== */
+
+.student-attendance-table-header {
+    padding: 24px 28px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.student-attendance-table-header h2 {
+    margin: 0 0 6px;
+    font-size: 20px;
+    color: #111827;
+}
+
+.student-attendance-table-header p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* ======================================================
+   TABLE WRAPPER
+   ====================================================== */
+
+.student-attendance-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+/* ======================================================
+   TABLE
+   ====================================================== */
+
+.student-attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.student-attendance-table th {
+    background: #f9fafb;
+    color: #6b7280;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: left;
+    padding: 16px 24px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.student-attendance-table td {
+    padding: 18px 24px;
+    border-bottom: 1px solid #f0f1f3;
+    font-size: 14px;
+}
+
+.student-attendance-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.student-attendance-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ======================================================
+   ATTENDANCE ID
+   ====================================================== */
+
+.attendance-id {
+    display: inline-block;
+    background: #f3f4f6;
+    color: #4b5563;
+    padding: 5px 9px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ======================================================
+   DATE
+   ====================================================== */
+
+.attendance-date {
+    color: #374151;
+    font-weight: 600;
+}
+
+
+/* ======================================================
+   STATUS
+   ====================================================== */
+
+.attendance-status-present,
+.attendance-status-absent {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.attendance-status-present {
+    background: #ecfdf5;
+    color: #047857;
+}
+
+.attendance-status-absent {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+
+/* ======================================================
+   EMPTY STATE
+   ====================================================== */
+
+.student-attendance-empty {
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.student-attendance-empty > div {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.student-attendance-empty h3 {
+    margin: 0 0 8px;
+    font-size: 19px;
+    color: #111827;
+}
+
+.student-attendance-empty p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* ======================================================
+   FOOTER BUTTON
+   ====================================================== */
+
+.student-attendance-footer {
+    margin-top: 25px;
+}
+
+.student-attendance-dashboard-button {
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.student-attendance-dashboard-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+
+/* ======================================================
+   LOADING
+   ====================================================== */
+
+.student-attendance-loading {
+    min-height: 100vh;
+    background: #f5f7fb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.student-attendance-loading h2 {
+    margin: 18px 0 5px;
+    color: #111827;
+}
+
+.student-attendance-loading p {
+    margin: 0;
+    color: #6b7280;
+}
+
+.student-attendance-spinner {
+    width: 42px;
+    height: 42px;
+    border: 4px solid #e5e7eb;
+    border-top: 4px solid #2563eb;
+    border-radius: 50%;
+    animation: studentAttendanceSpin 0.8s linear infinite;
+}
+
+@keyframes studentAttendanceSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+
+@media (max-width: 1000px) {
+
+    .student-attendance-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .student-attendance-page {
+        padding: 30px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .student-attendance-page {
+        padding: 20px;
+    }
+
+    .student-attendance-header h1 {
+        font-size: 26px;
+    }
+
+    .student-attendance-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .attendance-summary-card {
+        padding: 18px;
+    }
+
+    .student-attendance-table th,
+    .student-attendance-table td {
+        padding: 14px 16px;
+        white-space: nowrap;
+    }
+
+}

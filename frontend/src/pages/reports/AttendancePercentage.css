@@ -1,0 +1,353 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/* ======================================================
+   MAIN PAGE
+====================================================== */
+
+.percentage-page {
+    min-height: 100vh;
+    padding: 35px 45px;
+    background: #f5f7fb;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.percentage-header {
+    margin-bottom: 30px;
+}
+
+.percentage-header h1 {
+    margin: 18px 0 8px;
+    font-size: 32px;
+    color: #1f2937;
+}
+
+.percentage-header p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 15px;
+}
+
+
+/* ======================================================
+   BACK BUTTON
+====================================================== */
+
+.percentage-back-button {
+    border: none;
+    background: transparent;
+    color: #4f46e5;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+}
+
+.percentage-back-button:hover {
+    text-decoration: underline;
+}
+
+
+/* ======================================================
+   CONTENT
+====================================================== */
+
+.percentage-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+/* ======================================================
+   MAIN CARD
+====================================================== */
+
+.percentage-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+.percentage-card-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px;
+    border-radius: 15px;
+    background: #eef2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+
+.percentage-card h2 {
+    margin: 0 0 8px;
+    color: #1f2937;
+    font-size: 22px;
+}
+
+
+.percentage-card > p {
+    margin: 0 0 28px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* ======================================================
+   FORM
+====================================================== */
+
+.percentage-form {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 15px;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+
+.percentage-input-group {
+    flex: 1;
+    text-align: left;
+}
+
+
+.percentage-input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.percentage-input-group input {
+    width: 100%;
+    height: 48px;
+    padding: 0 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+    outline: none;
+    font-size: 14px;
+    color: #374151;
+    background: #ffffff;
+    transition: 0.2s ease;
+}
+
+
+.percentage-input-group input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+
+.percentage-input-group input::placeholder {
+    color: #9ca3af;
+}
+
+
+/* ======================================================
+   CHECK BUTTON
+====================================================== */
+
+.check-percentage-button {
+    height: 48px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 9px;
+    background: #4f46e5;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.2s ease;
+}
+
+
+.check-percentage-button:hover {
+    background: #4338ca;
+    transform: translateY(-1px);
+}
+
+
+.check-percentage-button:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* ======================================================
+   SUCCESS MESSAGE
+====================================================== */
+
+.percentage-success {
+    margin-top: 20px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #047857;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* ======================================================
+   ERROR MESSAGE
+====================================================== */
+
+.percentage-error {
+    margin-top: 20px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* ======================================================
+   RESULT CARD
+====================================================== */
+
+.percentage-result {
+    position: relative;
+    margin-top: 25px;
+    padding: 28px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+.result-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    background: #eef2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+
+.result-details span {
+    display: block;
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+
+.result-details strong {
+    display: block;
+    color: #1f2937;
+    font-size: 38px;
+    line-height: 1.1;
+}
+
+
+.result-details p {
+    margin: 10px 0 0;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+
+.result-details b {
+    color: #374151;
+}
+
+
+/* ======================================================
+   PROGRESS BAR
+====================================================== */
+
+.percentage-progress {
+    width: 100%;
+    height: 12px;
+    margin-top: 25px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+.percentage-progress-bar {
+    height: 100%;
+    background: #4f46e5;
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+
+
+/* ======================================================
+   TABLET
+====================================================== */
+
+@media (max-width: 800px) {
+
+    .percentage-page {
+        padding: 30px;
+    }
+
+    .percentage-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .check-percentage-button {
+        width: 100%;
+    }
+
+}
+
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 600px) {
+
+    .percentage-page {
+        padding: 20px 15px;
+    }
+
+    .percentage-header h1 {
+        font-size: 25px;
+    }
+
+    .percentage-card {
+        padding: 25px 18px;
+    }
+
+    .percentage-result {
+        padding: 22px;
+    }
+
+    .result-details strong {
+        font-size: 32px;
+    }
+
+}

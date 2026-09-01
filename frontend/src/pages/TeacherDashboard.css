@@ -1,0 +1,391 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/* ======================================================
+   MAIN DASHBOARD
+====================================================== */
+
+.teacher-dashboard {
+    min-height: 100vh;
+    padding: 35px 45px;
+    background: #f5f7fb;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.teacher-dashboard-header {
+    max-width: 1200px;
+    margin: 0 auto 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+.teacher-dashboard-label {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #4f46e5;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.teacher-dashboard-header h1 {
+    margin: 0 0 8px;
+
+    color: #1f2937;
+
+    font-size: 32px;
+    font-weight: 700;
+}
+
+
+.teacher-dashboard-header p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 15px;
+}
+
+
+/* ======================================================
+   LOGOUT BUTTON
+====================================================== */
+
+.teacher-logout-button {
+    padding: 11px 20px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #374151;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.teacher-logout-button:hover {
+    background: #fef2f2;
+
+    border-color: #fecaca;
+
+    color: #dc2626;
+}
+
+
+/* ======================================================
+   DASHBOARD CARDS
+====================================================== */
+
+.teacher-dashboard-cards {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+
+/* ======================================================
+   CARD
+====================================================== */
+
+.teacher-dashboard-card {
+    display: flex;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+
+    transition: 0.25s ease;
+}
+
+
+.teacher-dashboard-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07);
+}
+
+
+/* ======================================================
+   CARD ICON
+====================================================== */
+
+.teacher-card-icon {
+    width: 55px;
+    height: 55px;
+
+    min-width: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: #eef2ff;
+
+    font-size: 26px;
+}
+
+
+/* ======================================================
+   CARD CONTENT
+====================================================== */
+
+.teacher-card-content {
+    flex: 1;
+}
+
+
+.teacher-card-label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #6b7280;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+}
+
+
+.teacher-card-content h2 {
+    margin: 0 0 8px;
+
+    color: #1f2937;
+
+    font-size: 21px;
+}
+
+
+.teacher-card-content p {
+    margin: 0 0 18px;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* ======================================================
+   CARD LINKS
+====================================================== */
+
+.teacher-card-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+/* ======================================================
+   BUTTON / LINK
+====================================================== */
+
+.teacher-card-button {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 11px 14px;
+
+    border-radius: 8px;
+
+    background: #4f46e5;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+
+.teacher-card-button:hover {
+    background: #4338ca;
+
+    transform: translateX(2px);
+}
+
+
+.teacher-card-button span {
+    font-size: 17px;
+
+    transition: 0.2s ease;
+}
+
+
+.teacher-card-button:hover span {
+    transform: translateX(3px);
+}
+
+
+/* ======================================================
+   SECONDARY BUTTONS
+====================================================== */
+
+.teacher-card-button.secondary {
+    background: #f9fafb;
+
+    color: #4f46e5;
+
+    border: 1px solid #e5e7eb;
+}
+
+
+.teacher-card-button.secondary:hover {
+    background: #eef2ff;
+
+    border-color: #c7d2fe;
+}
+
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+.teacher-dashboard-footer {
+    max-width: 1200px;
+
+    margin: 35px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #e5e7eb;
+
+    text-align: center;
+}
+
+
+.teacher-dashboard-footer p {
+    margin: 0;
+
+    color: #9ca3af;
+
+    font-size: 12px;
+}
+
+
+/* ======================================================
+   TABLET
+====================================================== */
+
+@media (max-width: 850px) {
+
+    .teacher-dashboard {
+        padding: 30px;
+    }
+
+    .teacher-dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 600px) {
+
+    .teacher-dashboard {
+        padding: 20px 15px;
+    }
+
+
+    .teacher-dashboard-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .teacher-dashboard-header h1 {
+        font-size: 26px;
+    }
+
+
+    .teacher-logout-button {
+        width: 100%;
+    }
+
+
+    .teacher-dashboard-card {
+        padding: 20px;
+
+        gap: 15px;
+    }
+
+
+    .teacher-card-icon {
+        width: 48px;
+        height: 48px;
+
+        min-width: 48px;
+
+        font-size: 22px;
+    }
+
+
+    .teacher-card-content h2 {
+        font-size: 19px;
+    }
+
+}

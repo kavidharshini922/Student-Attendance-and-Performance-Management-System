@@ -1,0 +1,276 @@
+
+/* ======================================================
+   MARK ATTENDANCE PAGE
+   ====================================================== */
+
+.attendance-page {
+    min-height: 100vh;
+    padding: 35px 50px;
+    background: #f5f7fb;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+}
+
+
+/* ======================================================
+   HEADER
+   ====================================================== */
+
+.attendance-header {
+    margin-bottom: 30px;
+}
+
+.attendance-header h1 {
+    margin: 18px 0 8px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.attendance-header p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 15px;
+}
+
+
+/* ======================================================
+   BACK BUTTON
+   ====================================================== */
+
+.attendance-back-button {
+    border: none;
+    background: transparent;
+    color: #2563eb;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.attendance-back-button:hover {
+    text-decoration: underline;
+}
+
+
+/* ======================================================
+   SUCCESS MESSAGE
+   ====================================================== */
+
+.attendance-success {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #047857;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* ======================================================
+   ERROR MESSAGE
+   ====================================================== */
+
+.attendance-error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* ======================================================
+   FORM CONTAINER
+   ====================================================== */
+
+.attendance-form-container {
+    max-width: 750px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ======================================================
+   FORM HEADER
+   ====================================================== */
+
+.attendance-form-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.attendance-form-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: #eff6ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+}
+
+.attendance-form-header h2 {
+    margin: 0 0 5px;
+    font-size: 21px;
+    color: #111827;
+}
+
+.attendance-form-header p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* ======================================================
+   FORM
+   ====================================================== */
+
+.attendance-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+
+/* ======================================================
+   FORM GROUP
+   ====================================================== */
+
+.attendance-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.attendance-form-group label {
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.attendance-form-group input,
+.attendance-form-group select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #111827;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.attendance-form-group input:focus,
+.attendance-form-group select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* ======================================================
+   FORM ACTIONS
+   ====================================================== */
+
+.attendance-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding-top: 10px;
+}
+
+
+/* ======================================================
+   CANCEL BUTTON
+   ====================================================== */
+
+.attendance-cancel-button {
+    padding: 12px 22px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.attendance-cancel-button:hover {
+    background: #f3f4f6;
+}
+
+
+/* ======================================================
+   SUBMIT BUTTON
+   ====================================================== */
+
+.attendance-submit-button {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.attendance-submit-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.attendance-submit-button:disabled {
+    background: #93c5fd;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+
+@media (max-width: 700px) {
+
+    .attendance-page {
+        padding: 25px 20px;
+    }
+
+    .attendance-header h1 {
+        font-size: 27px;
+    }
+
+    .attendance-form-container {
+        padding: 24px;
+    }
+
+    .attendance-form-actions {
+        flex-direction: column;
+    }
+
+    .attendance-cancel-button,
+    .attendance-submit-button {
+        width: 100%;
+    }
+
+}
+
