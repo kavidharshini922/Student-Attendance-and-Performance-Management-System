@@ -19,7 +19,10 @@ import attendance_system.repository.TeacherRepository;
 
 @RestController
 @RequestMapping("/teachers")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://student-attendance-and-performance.vercel.app"
+})
 public class TeacherController {
 
     @Autowired

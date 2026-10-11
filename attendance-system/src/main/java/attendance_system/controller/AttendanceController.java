@@ -16,7 +16,10 @@ import attendance_system.entity.Attendance;
 import attendance_system.service.AttendanceService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://student-attendance-and-performance.vercel.app"
+})
 @RequestMapping("/attendance")
 public class AttendanceController {
 

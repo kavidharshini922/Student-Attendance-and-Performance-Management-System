@@ -12,7 +12,10 @@ import attendance_system.repository.UserRepository;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://student-attendance-and-performance.vercel.app"
+})
 public class AuthController {
 
     private final UserRepository userRepository;
