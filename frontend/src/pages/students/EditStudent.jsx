@@ -15,7 +15,7 @@ function EditStudent() {
   });
 
   useEffect(() => {
-    fetch(`http://localhost:8080/students/${id}`)
+    fetch(`https://student-attendance-and-performance.onrender.com/students/${id}`)
       .then((response) => response.json())
       .then((data) => setStudent(data))
       .catch((error) => console.error(error));
@@ -33,7 +33,7 @@ function EditStudent() {
 
     try {
       const response = await fetch(
-        `http://localhost:8080/students/${id}`,
+        `https://student-attendance-and-performance.onrender.com/students/${id}`,
         {
           method: "PUT",
           headers: {

@@ -1,24 +1,17 @@
-
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import AIAssistant from "../components/AIAssistant";
 import "./AdminDashboard.css";
 
 function AdminDashboard() {
 
     const navigate = useNavigate();
 
-    // ==================================================
     // Logged-in Admin
-    // ==================================================
-
     const name =
         localStorage.getItem("userName") || "Administrator";
 
-
-    // ==================================================
     // State
-    // ==================================================
-
     const [students, setStudents] = useState([]);
     const [teachers, setTeachers] = useState([]);
     const [attendance, setAttendance] = useState([]);
@@ -35,11 +28,7 @@ function AdminDashboard() {
         performance: false
     });
 
-
-    // ==================================================
     // Current Date
-    // ==================================================
-
     const today = new Date();
 
     const formattedDate =
@@ -50,13 +39,8 @@ function AdminDashboard() {
             year: "numeric"
         });
 
-
-    // ==================================================
     // Logout
-    // ==================================================
-
     const logout = () => {
-
         localStorage.removeItem("userName");
         localStorage.removeItem("userRole");
         localStorage.removeItem("studentId");
@@ -64,11 +48,7 @@ function AdminDashboard() {
         navigate("/admin-login");
     };
 
-
-    // ==================================================
     // Load Dashboard Data
-    // ==================================================
-
     const loadDashboardData = async (isRefresh = false) => {
 
         try {
@@ -88,19 +68,14 @@ function AdminDashboard() {
                 performance: false
             };
 
-
-            // ==================================================
             // STUDENTS
-            // ==================================================
-
             try {
 
                 const response = await fetch(
-                    "http://localhost:8080/students"
+                    "https://student-attendance-and-performance.onrender.com/students"
                 );
 
                 if (response.ok) {
-
                     const data = await response.json();
 
                     setStudents(
@@ -111,32 +86,20 @@ function AdminDashboard() {
                 }
 
             } catch (err) {
-
-                console.error(
-                    "Students API Error:",
-                    err
-                );
+                console.error("Students API Error:", err);
             }
 
-
-            // ==================================================
             // TEACHERS
-            // ==================================================
-
             try {
 
                 const response = await fetch(
-                    "http://localhost:8080/teachers"
+                    "https://student-attendance-and-performance.onrender.com/teachers"
                 );
 
                 if (response.ok) {
-
                     const data = await response.json();
 
-                    console.log(
-                        "Teachers API Response:",
-                        data
-                    );
+                    console.log("Teachers API Response:", data);
 
                     setTeachers(
                         Array.isArray(data) ? data : []
@@ -146,26 +109,17 @@ function AdminDashboard() {
                 }
 
             } catch (err) {
-
-                console.error(
-                    "Teachers API Error:",
-                    err
-                );
+                console.error("Teachers API Error:", err);
             }
 
-
-            // ==================================================
             // ATTENDANCE
-            // ==================================================
-
             try {
 
                 const response = await fetch(
-                    "http://localhost:8080/attendance"
+                    "https://student-attendance-and-performance.onrender.com/attendance"
                 );
 
                 if (response.ok) {
-
                     const data = await response.json();
 
                     setAttendance(
@@ -176,26 +130,17 @@ function AdminDashboard() {
                 }
 
             } catch (err) {
-
-                console.error(
-                    "Attendance API Error:",
-                    err
-                );
+                console.error("Attendance API Error:", err);
             }
 
-
-            // ==================================================
             // PERFORMANCE
-            // ==================================================
-
             try {
 
                 const response = await fetch(
-                    "http://localhost:8080/performance"
+                    "https://student-attendance-and-performance.onrender.com/performance"
                 );
 
                 if (response.ok) {
-
                     const data = await response.json();
 
                     setPerformance(
@@ -206,32 +151,19 @@ function AdminDashboard() {
                 }
 
             } catch (err) {
-
-                console.error(
-                    "Performance API Error:",
-                    err
-                );
+                console.error("Performance API Error:", err);
             }
 
-
-            // ==================================================
             // Update Service Status
-            // ==================================================
-
             setServiceStatus(status);
 
-
-            // ==================================================
             // Backend Connection Warning
-            // ==================================================
-
             if (
                 !status.students &&
                 !status.teachers &&
                 !status.attendance &&
                 !status.performance
             ) {
-
                 setError(
                     "Unable to connect to the backend server. Please make sure Spring Boot is running on port 8080."
                 );
@@ -239,10 +171,7 @@ function AdminDashboard() {
 
         } catch (err) {
 
-            console.error(
-                "Admin Dashboard Error:",
-                err
-            );
+            console.error("Admin Dashboard Error:", err);
 
             setError(
                 "Unable to load dashboard information."
@@ -255,26 +184,15 @@ function AdminDashboard() {
         }
     };
 
-
-    // ==================================================
     // Initial Load
-    // ==================================================
-
     useEffect(() => {
-
         loadDashboardData();
-
     }, []);
 
-
-    // ==================================================
     // Loading Screen
-    // ==================================================
-
     if (loading) {
 
         return (
-
             <div className="admin-loading">
 
                 <div className="loading-spinner"></div>
@@ -291,22 +209,14 @@ function AdminDashboard() {
         );
     }
 
-
-    // ==================================================
     // Dashboard
-    // ==================================================
-
     return (
 
         <div className="admin-layout">
 
-
-            {/* ==================================================
-                SIDEBAR
-            ================================================== */}
+            {/* SIDEBAR */}
 
             <aside className="admin-sidebar">
-
 
                 {/* LOGO */}
 
@@ -317,19 +227,11 @@ function AdminDashboard() {
                     </div>
 
                     <div>
-
-                        <h2>
-                            EduManage
-                        </h2>
-
-                        <span>
-                            Management System
-                        </span>
-
+                        <h2>EduManage</h2>
+                        <span>Management System</span>
                     </div>
 
                 </div>
-
 
                 {/* NAVIGATION */}
 
@@ -339,142 +241,68 @@ function AdminDashboard() {
                         MAIN MENU
                     </p>
 
-
-                    {/* DASHBOARD */}
-
                     <button
                         className="sidebar-link active"
-                        onClick={() =>
-                            navigate("/admin")
-                        }
+                        onClick={() => navigate("/admin")}
                     >
-
-                        <span>
-                            🏠
-                        </span>
-
+                        <span>🏠</span>
                         Dashboard
-
                     </button>
-
-
-                    {/* STUDENTS */}
 
                     <button
                         className="sidebar-link"
-                        onClick={() =>
-                            navigate("/students")
-                        }
+                        onClick={() => navigate("/students")}
                     >
-
-                        <span>
-                            🎓
-                        </span>
-
+                        <span>🎓</span>
                         Students
-
                     </button>
-
-
-                    {/* TEACHERS */}
 
                     <button
                         className="sidebar-link"
-                        onClick={() =>
-                            navigate("/teachers")
-                        }
+                        onClick={() => navigate("/teachers")}
                     >
-
-                        <span>
-                            👨‍🏫
-                        </span>
-
+                        <span>👨‍🏫</span>
                         Teachers
-
                     </button>
-
-
-                    {/* ATTENDANCE */}
 
                     <button
                         className="sidebar-link"
-                        onClick={() =>
-                            navigate("/attendance")
-                        }
+                        onClick={() => navigate("/attendance")}
                     >
-
-                        <span>
-                            📋
-                        </span>
-
+                        <span>📋</span>
                         Attendance
-
                     </button>
-
-
-                    {/* PERFORMANCE */}
 
                     <button
                         className="sidebar-link"
-                        onClick={() =>
-                            navigate("/performance")
-                        }
+                        onClick={() => navigate("/performance")}
                     >
-
-                        <span>
-                            📊
-                        </span>
-
+                        <span>📊</span>
                         Performance
-
                     </button>
-
-
-                    {/* REPORTS */}
 
                     <button
                         className="sidebar-link"
-                        onClick={() =>
-                            navigate("/reports/attendance")
-                        }
+                        onClick={() => navigate("/reports/attendance")}
                     >
-
-                        <span>
-                            📈
-                        </span>
-
+                        <span>📈</span>
                         Reports & Analytics
-
                     </button>
-
 
                     <p className="navigation-title second-title">
                         SYSTEM
                     </p>
 
-
-                    {/* REFRESH */}
-
                     <button
                         className="sidebar-link"
-                        onClick={() =>
-                            loadDashboardData(true)
-                        }
+                        onClick={() => loadDashboardData(true)}
                         disabled={refreshing}
                     >
-
-                        <span>
-                            🔄
-                        </span>
-
-                        {refreshing
-                            ? "Refreshing..."
-                            : "Refresh Data"}
-
+                        <span>🔄</span>
+                        {refreshing ? "Refreshing..." : "Refresh Data"}
                     </button>
 
                 </nav>
-
 
                 {/* SIDEBAR BOTTOM */}
 
@@ -483,101 +311,61 @@ function AdminDashboard() {
                     <div className="sidebar-admin">
 
                         <div className="admin-avatar">
-
-                            {name
-                                .charAt(0)
-                                .toUpperCase()}
-
+                            {name.charAt(0).toUpperCase()}
                         </div>
 
                         <div>
-
-                            <strong>
-                                {name}
-                            </strong>
-
-                            <span>
-                                Administrator
-                            </span>
-
+                            <strong>{name}</strong>
+                            <span>Administrator</span>
                         </div>
 
                     </div>
-
 
                     <button
                         className="sidebar-logout"
                         onClick={logout}
                     >
-
-                        <span>
-                            🚪
-                        </span>
-
+                        <span>🚪</span>
                         Logout
-
                     </button>
 
                 </div>
 
             </aside>
 
-
-            {/* ==================================================
-                MAIN CONTENT
-            ================================================== */}
+            {/* MAIN CONTENT */}
 
             <main className="admin-main">
-
 
                 {/* TOP BAR */}
 
                 <header className="admin-topbar">
 
                     <div>
-
                         <p className="topbar-date">
                             {formattedDate}
                         </p>
-
                     </div>
-
 
                     <div className="topbar-right">
 
                         <button
                             className="notification"
-                            onClick={() =>
-                                loadDashboardData(true)
-                            }
+                            onClick={() => loadDashboardData(true)}
                             title="Refresh dashboard"
                         >
-
                             🔔
-
                         </button>
-
 
                         <div className="topbar-profile">
 
                             <div className="topbar-avatar">
-
-                                {name
-                                    .charAt(0)
-                                    .toUpperCase()}
-
+                                {name.charAt(0).toUpperCase()}
                             </div>
 
                             <div>
-
-                                <strong>
-                                    {name}
-                                </strong>
-
-                                <span>
-                                    Admin
-                                </span>
-
+                                <strong>{name}</strong>
+                                <span>Admin</span>
                             </div>
 
                         </div>
@@ -586,11 +374,9 @@ function AdminDashboard() {
 
                 </header>
 
-
                 {/* PAGE CONTENT */}
 
                 <div className="admin-content">
-
 
                     {/* ERROR MESSAGE */}
 
@@ -598,26 +384,18 @@ function AdminDashboard() {
 
                         <div className="dashboard-warning">
 
-                            <span>
-                                ⚠️
-                            </span>
+                            <span>⚠️</span>
 
                             <div>
-
                                 <strong>
                                     Backend Connection Warning
                                 </strong>
 
-                                <p>
-                                    {error}
-                                </p>
-
+                                <p>{error}</p>
                             </div>
 
                             <button
-                                onClick={() =>
-                                    loadDashboardData(true)
-                                }
+                                onClick={() => loadDashboardData(true)}
                             >
                                 Retry
                             </button>
@@ -625,7 +403,6 @@ function AdminDashboard() {
                         </div>
 
                     )}
-
 
                     {/* WELCOME SECTION */}
 
@@ -649,7 +426,6 @@ function AdminDashboard() {
 
                         </div>
 
-
                         <div className="welcome-decoration">
 
                             <div className="decoration-circle">
@@ -660,55 +436,34 @@ function AdminDashboard() {
 
                     </section>
 
-
-                    {/* ==================================================
-                        STATISTICS
-                    ================================================== */}
+                    {/* STATISTICS */}
 
                     <section className="statistics-section">
 
                         <div className="section-title">
 
                             <div>
-
-                                <h2>
-                                    System Overview
-                                </h2>
-
-                                <p>
-                                    Current academic records
-                                </p>
-
+                                <h2>System Overview</h2>
+                                <p>Current academic records</p>
                             </div>
-
 
                             <button
                                 className="refresh-button"
-                                onClick={() =>
-                                    loadDashboardData(true)
-                                }
+                                onClick={() => loadDashboardData(true)}
                                 disabled={refreshing}
                             >
-
-                                {refreshing
-                                    ? "Refreshing..."
-                                    : "↻ Refresh"}
-
+                                {refreshing ? "Refreshing..." : "↻ Refresh"}
                             </button>
 
                         </div>
 
-
                         <div className="statistics-grid">
-
 
                             {/* STUDENTS */}
 
                             <div
                                 className="stat-card"
-                                onClick={() =>
-                                    navigate("/students")
-                                }
+                                onClick={() => navigate("/students")}
                             >
 
                                 <div className="stat-card-top">
@@ -717,19 +472,13 @@ function AdminDashboard() {
                                         🎓
                                     </div>
 
-                                    <span className="stat-arrow">
-                                        →
-                                    </span>
+                                    <span className="stat-arrow">→</span>
 
                                 </div>
 
-                                <p>
-                                    Total Students
-                                </p>
+                                <p>Total Students</p>
 
-                                <h3>
-                                    {students.length}
-                                </h3>
+                                <h3>{students.length}</h3>
 
                                 <span className="stat-description">
                                     Registered students
@@ -737,14 +486,11 @@ function AdminDashboard() {
 
                             </div>
 
-
                             {/* TEACHERS */}
 
                             <div
                                 className="stat-card"
-                                onClick={() =>
-                                    navigate("/teachers")
-                                }
+                                onClick={() => navigate("/teachers")}
                             >
 
                                 <div className="stat-card-top">
@@ -753,19 +499,13 @@ function AdminDashboard() {
                                         👨‍🏫
                                     </div>
 
-                                    <span className="stat-arrow">
-                                        →
-                                    </span>
+                                    <span className="stat-arrow">→</span>
 
                                 </div>
 
-                                <p>
-                                    Total Teachers
-                                </p>
+                                <p>Total Teachers</p>
 
-                                <h3>
-                                    {teachers.length}
-                                </h3>
+                                <h3>{teachers.length}</h3>
 
                                 <span className="stat-description">
                                     Registered teachers
@@ -773,14 +513,11 @@ function AdminDashboard() {
 
                             </div>
 
-
                             {/* ATTENDANCE */}
 
                             <div
                                 className="stat-card"
-                                onClick={() =>
-                                    navigate("/attendance")
-                                }
+                                onClick={() => navigate("/attendance")}
                             >
 
                                 <div className="stat-card-top">
@@ -789,19 +526,13 @@ function AdminDashboard() {
                                         📋
                                     </div>
 
-                                    <span className="stat-arrow">
-                                        →
-                                    </span>
+                                    <span className="stat-arrow">→</span>
 
                                 </div>
 
-                                <p>
-                                    Attendance Records
-                                </p>
+                                <p>Attendance Records</p>
 
-                                <h3>
-                                    {attendance.length}
-                                </h3>
+                                <h3>{attendance.length}</h3>
 
                                 <span className="stat-description">
                                     Attendance entries
@@ -809,14 +540,11 @@ function AdminDashboard() {
 
                             </div>
 
-
                             {/* PERFORMANCE */}
 
                             <div
                                 className="stat-card"
-                                onClick={() =>
-                                    navigate("/performance")
-                                }
+                                onClick={() => navigate("/performance")}
                             >
 
                                 <div className="stat-card-top">
@@ -825,19 +553,13 @@ function AdminDashboard() {
                                         📊
                                     </div>
 
-                                    <span className="stat-arrow">
-                                        →
-                                    </span>
+                                    <span className="stat-arrow">→</span>
 
                                 </div>
 
-                                <p>
-                                    Performance Records
-                                </p>
+                                <p>Performance Records</p>
 
-                                <h3>
-                                    {performance.length}
-                                </h3>
+                                <h3>{performance.length}</h3>
 
                                 <span className="stat-description">
                                     Academic records
@@ -849,235 +571,112 @@ function AdminDashboard() {
 
                     </section>
 
-
-                    {/* ==================================================
-                        QUICK ACTIONS
-                    ================================================== */}
+                    {/* QUICK ACTIONS */}
 
                     <section className="quick-actions-section">
 
                         <div className="section-title">
 
                             <div>
-
-                                <h2>
-                                    Quick Actions
-                                </h2>
-
-                                <p>
-                                    Frequently used management tools
-                                </p>
-
+                                <h2>Quick Actions</h2>
+                                <p>Frequently used management tools</p>
                             </div>
 
                         </div>
 
-
                         <div className="quick-actions-grid">
 
-
-                            {/* ADD STUDENT */}
-
                             <button
                                 className="quick-action"
-                                onClick={() =>
-                                    navigate("/students/add")
-                                }
+                                onClick={() => navigate("/students/add")}
                             >
-
-                                <div className="quick-action-icon">
-                                    ➕
-                                </div>
+                                <div className="quick-action-icon">➕</div>
 
                                 <div>
-
-                                    <strong>
-                                        Add Student
-                                    </strong>
-
-                                    <span>
-                                        Register a new student
-                                    </span>
-
+                                    <strong>Add Student</strong>
+                                    <span>Register a new student</span>
                                 </div>
 
-                                <span className="action-arrow">
-                                    →
-                                </span>
-
+                                <span className="action-arrow">→</span>
                             </button>
 
-
-                            {/* MANAGE STUDENTS */}
-
                             <button
                                 className="quick-action"
-                                onClick={() =>
-                                    navigate("/students")
-                                }
+                                onClick={() => navigate("/students")}
                             >
-
-                                <div className="quick-action-icon">
-                                    👥
-                                </div>
+                                <div className="quick-action-icon">👥</div>
 
                                 <div>
-
-                                    <strong>
-                                        Manage Students
-                                    </strong>
-
-                                    <span>
-                                        View student information
-                                    </span>
-
+                                    <strong>Manage Students</strong>
+                                    <span>View student information</span>
                                 </div>
 
-                                <span className="action-arrow">
-                                    →
-                                </span>
-
+                                <span className="action-arrow">→</span>
                             </button>
 
-
-                            {/* ADD TEACHER */}
-
                             <button
                                 className="quick-action"
-                                onClick={() =>
-                                    navigate("/teachers/add")
-                                }
+                                onClick={() => navigate("/teachers/add")}
                             >
-
-                                <div className="quick-action-icon">
-                                    👨‍🏫
-                                </div>
+                                <div className="quick-action-icon">👨‍🏫</div>
 
                                 <div>
-
-                                    <strong>
-                                        Add Teacher
-                                    </strong>
-
-                                    <span>
-                                        Register a new teacher
-                                    </span>
-
+                                    <strong>Add Teacher</strong>
+                                    <span>Register a new teacher</span>
                                 </div>
 
-                                <span className="action-arrow">
-                                    →
-                                </span>
-
+                                <span className="action-arrow">→</span>
                             </button>
 
-
-                            {/* MANAGE TEACHERS */}
-
                             <button
                                 className="quick-action"
-                                onClick={() =>
-                                    navigate("/teachers")
-                                }
+                                onClick={() => navigate("/teachers")}
                             >
-
-                                <div className="quick-action-icon">
-                                    👥
-                                </div>
+                                <div className="quick-action-icon">👥</div>
 
                                 <div>
-
-                                    <strong>
-                                        Manage Teachers
-                                    </strong>
-
-                                    <span>
-                                        View teacher information
-                                    </span>
-
+                                    <strong>Manage Teachers</strong>
+                                    <span>View teacher information</span>
                                 </div>
 
-                                <span className="action-arrow">
-                                    →
-                                </span>
-
+                                <span className="action-arrow">→</span>
                             </button>
 
-
-                            {/* MARK ATTENDANCE */}
-
                             <button
                                 className="quick-action"
-                                onClick={() =>
-                                    navigate("/attendance/mark")
-                                }
+                                onClick={() => navigate("/attendance/mark")}
                             >
-
-                                <div className="quick-action-icon">
-                                    ✅
-                                </div>
+                                <div className="quick-action-icon">✅</div>
 
                                 <div>
-
-                                    <strong>
-                                        Mark Attendance
-                                    </strong>
-
-                                    <span>
-                                        Record today's attendance
-                                    </span>
-
+                                    <strong>Mark Attendance</strong>
+                                    <span>Record today's attendance</span>
                                 </div>
 
-                                <span className="action-arrow">
-                                    →
-                                </span>
-
+                                <span className="action-arrow">→</span>
                             </button>
 
-
-                            {/* ADD MARKS */}
-
                             <button
                                 className="quick-action"
-                                onClick={() =>
-                                    navigate("/performance/add")
-                                }
+                                onClick={() => navigate("/performance/add")}
                             >
-
-                                <div className="quick-action-icon">
-                                    📝
-                                </div>
+                                <div className="quick-action-icon">📝</div>
 
                                 <div>
-
-                                    <strong>
-                                        Add Marks
-                                    </strong>
-
-                                    <span>
-                                        Update academic performance
-                                    </span>
-
+                                    <strong>Add Marks</strong>
+                                    <span>Update academic performance</span>
                                 </div>
 
-                                <span className="action-arrow">
-                                    →
-                                </span>
-
+                                <span className="action-arrow">→</span>
                             </button>
 
                         </div>
 
                     </section>
 
-
-                    {/* ==================================================
-                        LOWER SECTION
-                    ================================================== */}
+                    {/* LOWER SECTION */}
 
                     <div className="dashboard-lower-grid">
-
 
                         {/* RECENT ATTENDANCE */}
 
@@ -1086,27 +685,17 @@ function AdminDashboard() {
                             <div className="panel-header">
 
                                 <div>
-
-                                    <h2>
-                                        Recent Attendance
-                                    </h2>
-
-                                    <p>
-                                        Latest attendance records
-                                    </p>
-
+                                    <h2>Recent Attendance</h2>
+                                    <p>Latest attendance records</p>
                                 </div>
 
                                 <button
-                                    onClick={() =>
-                                        navigate("/attendance")
-                                    }
+                                    onClick={() => navigate("/attendance")}
                                 >
                                     View All →
                                 </button>
 
                             </div>
-
 
                             <div className="attendance-list">
 
@@ -1126,26 +715,17 @@ function AdminDashboard() {
                                             >
 
                                                 <div className="attendance-date">
-
                                                     <strong>
                                                         {record.date || "N/A"}
                                                     </strong>
-
                                                 </div>
 
-
                                                 <div className="attendance-student">
-
-                                                    <span>
-                                                        Student ID
-                                                    </span>
-
+                                                    <span>Student ID</span>
                                                     <strong>
                                                         {record.studentId || "N/A"}
                                                     </strong>
-
                                                 </div>
-
 
                                                 <span
                                                     className={
@@ -1156,9 +736,7 @@ function AdminDashboard() {
                                                                 : "status-unknown"
                                                     }
                                                 >
-
                                                     {record.status || "UNKNOWN"}
-
                                                 </span>
 
                                             </div>
@@ -1169,18 +747,14 @@ function AdminDashboard() {
 
                                     <div className="empty-state">
 
-                                        <span>
-                                            📋
-                                        </span>
+                                        <span>📋</span>
 
                                         <p>
                                             No attendance records available.
                                         </p>
 
                                         <button
-                                            onClick={() =>
-                                                navigate("/attendance/mark")
-                                            }
+                                            onClick={() => navigate("/attendance/mark")}
                                         >
                                             Mark Attendance
                                         </button>
@@ -1193,7 +767,6 @@ function AdminDashboard() {
 
                         </section>
 
-
                         {/* PERFORMANCE SUMMARY */}
 
                         <section className="dashboard-panel">
@@ -1201,42 +774,24 @@ function AdminDashboard() {
                             <div className="panel-header">
 
                                 <div>
-
-                                    <h2>
-                                        Performance Summary
-                                    </h2>
-
-                                    <p>
-                                        Latest academic records
-                                    </p>
-
+                                    <h2>Performance Summary</h2>
+                                    <p>Latest academic records</p>
                                 </div>
 
                                 <button
-                                    onClick={() =>
-                                        navigate("/performance")
-                                    }
+                                    onClick={() => navigate("/performance")}
                                 >
                                     View All →
                                 </button>
 
                             </div>
 
-
                             <div className="performance-summary">
 
                                 <div className="performance-number">
-
-                                    <span>
-                                        Total Records
-                                    </span>
-
-                                    <strong>
-                                        {performance.length}
-                                    </strong>
-
+                                    <span>Total Records</span>
+                                    <strong>{performance.length}</strong>
                                 </div>
-
 
                                 <div className="performance-info">
 
@@ -1247,7 +802,6 @@ function AdminDashboard() {
                                         </span>
 
                                         <div>
-
                                             <strong>
                                                 Academic Performance
                                             </strong>
@@ -1256,19 +810,15 @@ function AdminDashboard() {
                                                 Student marks and examination
                                                 records
                                             </p>
-
                                         </div>
 
                                     </div>
 
                                 </div>
 
-
                                 <button
                                     className="performance-button"
-                                    onClick={() =>
-                                        navigate("/performance")
-                                    }
+                                    onClick={() => navigate("/performance")}
                                 >
                                     Manage Performance →
                                 </button>
@@ -1279,27 +829,16 @@ function AdminDashboard() {
 
                     </div>
 
-
-                    {/* ==================================================
-                        SYSTEM STATUS
-                    ================================================== */}
+                    {/* SYSTEM STATUS */}
 
                     <section className="system-status-panel">
 
                         <div className="system-status-header">
 
                             <div>
-
-                                <h2>
-                                    System Status
-                                </h2>
-
-                                <p>
-                                    Current application services
-                                </p>
-
+                                <h2>System Status</h2>
+                                <p>Current application services</p>
                             </div>
-
 
                             <span
                                 className={
@@ -1316,39 +855,29 @@ function AdminDashboard() {
                                 serviceStatus.teachers &&
                                 serviceStatus.attendance &&
                                 serviceStatus.performance
-
                                     ? "● All systems operational"
-
                                     : "● Some services unavailable"}
 
                             </span>
 
                         </div>
 
-
                         <div className="system-status-grid">
-
 
                             {/* STUDENT DATABASE */}
 
                             <div className="system-status-item">
 
-                                <span>
-                                    🗄️
-                                </span>
+                                <span>🗄️</span>
 
                                 <div>
-
-                                    <strong>
-                                        Student Database
-                                    </strong>
+                                    <strong>Student Database</strong>
 
                                     <p>
                                         {serviceStatus.students
                                             ? "Connected"
                                             : "Unavailable"}
                                     </p>
-
                                 </div>
 
                                 <b
@@ -1363,27 +892,20 @@ function AdminDashboard() {
 
                             </div>
 
-
                             {/* TEACHER DATABASE */}
 
                             <div className="system-status-item">
 
-                                <span>
-                                    👨‍🏫
-                                </span>
+                                <span>👨‍🏫</span>
 
                                 <div>
-
-                                    <strong>
-                                        Teacher Database
-                                    </strong>
+                                    <strong>Teacher Database</strong>
 
                                     <p>
                                         {serviceStatus.teachers
                                             ? "Connected"
                                             : "Unavailable"}
                                     </p>
-
                                 </div>
 
                                 <b
@@ -1398,27 +920,20 @@ function AdminDashboard() {
 
                             </div>
 
-
                             {/* ATTENDANCE SYSTEM */}
 
                             <div className="system-status-item">
 
-                                <span>
-                                    📋
-                                </span>
+                                <span>📋</span>
 
                                 <div>
-
-                                    <strong>
-                                        Attendance System
-                                    </strong>
+                                    <strong>Attendance System</strong>
 
                                     <p>
                                         {serviceStatus.attendance
                                             ? "Active"
                                             : "Unavailable"}
                                     </p>
-
                                 </div>
 
                                 <b
@@ -1433,27 +948,20 @@ function AdminDashboard() {
 
                             </div>
 
-
                             {/* PERFORMANCE SYSTEM */}
 
                             <div className="system-status-item">
 
-                                <span>
-                                    📊
-                                </span>
+                                <span>📊</span>
 
                                 <div>
-
-                                    <strong>
-                                        Performance System
-                                    </strong>
+                                    <strong>Performance System</strong>
 
                                     <p>
                                         {serviceStatus.performance
                                             ? "Active"
                                             : "Unavailable"}
                                     </p>
-
                                 </div>
 
                                 <b
@@ -1472,6 +980,14 @@ function AdminDashboard() {
 
                     </section>
 
+                    {/* AI ASSISTANT */}
+
+                    <section className="admin-ai-section">
+
+                        <AIAssistant />
+
+                    </section>
+
                 </div>
 
             </main>
@@ -1481,4 +997,3 @@ function AdminDashboard() {
 }
 
 export default AdminDashboard;
-

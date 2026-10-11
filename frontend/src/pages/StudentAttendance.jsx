@@ -30,7 +30,7 @@ function StudentAttendance() {
 
                 // Get attendance records
                 const attendanceResponse = await fetch(
-                    `http://localhost:8080/attendance/student/${studentId}`
+                    `https://student-attendance-and-performance.onrender.com/attendance/student/${studentId}`
                 );
 
                 if (!attendanceResponse.ok) {
@@ -49,7 +49,7 @@ function StudentAttendance() {
 
                 // Get attendance percentage
                 const percentageResponse = await fetch(
-                    `http://localhost:8080/attendance/student/${studentId}/percentage`
+                    `https://student-attendance-and-performance.onrender.com/attendance/student/${studentId}/percentage`
                 );
 
                 if (!percentageResponse.ok) {

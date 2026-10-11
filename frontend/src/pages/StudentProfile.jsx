@@ -23,7 +23,7 @@ function StudentProfile() {
         setLoading(true);
         setError("");
 
-        fetch("http://localhost:8080/students")
+        fetch("https://student-attendance-and-performance.onrender.com/students")
             .then(response => {
 
                 if (!response.ok) {

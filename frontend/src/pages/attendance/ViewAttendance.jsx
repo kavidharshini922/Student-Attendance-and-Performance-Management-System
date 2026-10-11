@@ -36,7 +36,7 @@ function ViewAttendance() {
             setMessage("");
 
             const response = await fetch(
-                "http://localhost:8080/attendance"
+                "https://student-attendance-and-performance.onrender.com/attendance"
             );
 
             if (!response.ok) {

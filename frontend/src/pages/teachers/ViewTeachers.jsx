@@ -22,7 +22,7 @@ function ViewTeachers() {
             setError("");
 
             const response = await fetch(
-                "http://localhost:8080/teachers"
+                "https://student-attendance-and-performance.onrender.com/teachers"
             );
 
             if (!response.ok) {
@@ -82,7 +82,7 @@ function ViewTeachers() {
         try {
 
             const response = await fetch(
-                `http://localhost:8080/teachers/${id}`,
+                `https://student-attendance-and-performance.onrender.com/teachers/${id}`,
                 {
                     method: "DELETE"
                 }

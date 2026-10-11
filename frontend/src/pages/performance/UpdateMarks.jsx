@@ -19,7 +19,7 @@ function UpdateMarks() {
             return;
         }
 
-        fetch(`http://localhost:8080/performance/${id}`)
+        fetch(`https://student-attendance-and-performance.onrender.com/performance/${id}`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Failed to load performance");
@@ -49,7 +49,7 @@ function UpdateMarks() {
 
         try {
             const response = await fetch(
-                `http://localhost:8080/performance/${id}`,
+                `https://student-attendance-and-performance.onrender.com/performance/${id}`,
                 {
                     method: "PUT",
                     headers: {

@@ -52,7 +52,7 @@ function ViewStudents() {
             setError("");
 
             const response = await fetch(
-                "http://localhost:8080/students"
+                "https://student-attendance-and-performance.onrender.com/students"
             );
 
             if (!response.ok) {
@@ -234,7 +234,7 @@ function ViewStudents() {
             if (editingStudent) {
 
                 response = await fetch(
-                    `http://localhost:8080/students/${editingStudent.studentId}`,
+                    `https://student-attendance-and-performance.onrender.com/students/${editingStudent.studentId}`,
                     {
                         method: "PUT",
 
@@ -256,7 +256,7 @@ function ViewStudents() {
             else {
 
                 response = await fetch(
-                    "http://localhost:8080/students",
+                    "https://student-attendance-and-performance.onrender.com/students",
                     {
                         method: "POST",
 
@@ -347,7 +347,7 @@ function ViewStudents() {
 
 
             const response = await fetch(
-                `http://localhost:8080/students/${studentId}`,
+                `https://student-attendance-and-performance.onrender.com/students/${studentId}`,
                 {
                     method: "DELETE"
                 }

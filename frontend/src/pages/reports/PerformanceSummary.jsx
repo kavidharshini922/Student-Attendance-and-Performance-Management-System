@@ -40,7 +40,7 @@ function PerformanceSummary() {
         try {
 
             const response = await fetch(
-                "http://localhost:8080/performance"
+                "https://student-attendance-and-performance.onrender.com/performance"
             );
 
 

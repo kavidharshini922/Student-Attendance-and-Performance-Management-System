@@ -21,7 +21,7 @@ function AddStudent() {
         e.preventDefault();
 
         try {
-            const response = await fetch("http://localhost:8080/students", {
+            const response = await fetch("https://student-attendance-and-performance.onrender.com/students", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

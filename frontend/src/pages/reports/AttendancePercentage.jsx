@@ -31,7 +31,7 @@ function AttendancePercentage() {
         try {
 
             const response = await fetch(
-                `http://localhost:8080/attendance/student/${studentId}/percentage`
+                `https://student-attendance-and-performance.onrender.com/attendance/student/${studentId}/percentage`
             );
 
 

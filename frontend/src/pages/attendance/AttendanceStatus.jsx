@@ -34,7 +34,7 @@ function AttendanceStatus() {
             setLoading(true);
 
             const response = await fetch(
-                `http://localhost:8080/attendance/student/${studentId}`
+                `https://student-attendance-and-performance.onrender.com/attendance/student/${studentId}`
             );
 
             if (!response.ok) {

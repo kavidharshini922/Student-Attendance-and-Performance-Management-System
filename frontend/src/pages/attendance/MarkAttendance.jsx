@@ -31,7 +31,7 @@ function MarkAttendance() {
         try {
 
             const response = await fetch(
-                "http://localhost:8080/attendance",
+                "https://student-attendance-and-performance.onrender.com/attendance",
                 {
                     method: "POST",
 

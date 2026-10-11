@@ -38,7 +38,7 @@ function ViewMarks() {
             setError("");
 
             const response = await fetch(
-                "http://localhost:8080/performance"
+                "https://student-attendance-and-performance.onrender.com/performance"
             );
 
             if (!response.ok) {
@@ -104,7 +104,7 @@ function ViewMarks() {
             setError("");
 
             const response = await fetch(
-                `http://localhost:8080/performance/${id}`,
+                `https://student-attendance-and-performance.onrender.com/performance/${id}`,
                 {
                     method: "DELETE"
                 }

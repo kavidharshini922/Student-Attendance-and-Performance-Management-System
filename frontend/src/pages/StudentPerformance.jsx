@@ -24,7 +24,7 @@ function StudentPerformance() {
         setError("");
 
         fetch(
-            `http://localhost:8080/performance/student/${studentId}`
+            `https://student-attendance-and-performance.onrender.com/performance/student/${studentId}`
         )
             .then(response => {
 
