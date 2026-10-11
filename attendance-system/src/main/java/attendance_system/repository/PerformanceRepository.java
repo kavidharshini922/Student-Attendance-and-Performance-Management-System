@@ -1,3 +1,4 @@
+
 package attendance_system.repository;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import attendance_system.entity.Performance;
 public interface PerformanceRepository
         extends JpaRepository<Performance, Integer> {
 
-    List<Performance> findByStudentId(int studentId);
+    // Retrieve all performance records of a student
+    List<Performance> findByStudentId(Integer studentId);
 
 }
